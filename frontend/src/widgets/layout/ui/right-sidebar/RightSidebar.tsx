@@ -4,7 +4,11 @@ import { useLocation } from 'react-router-dom'
 
 import { useAppSelector } from '@/shared/lib/hooks/redux'
 
-import { DocumentationSidebar, StudyMaterialsSidebar } from './components'
+import {
+	DocumentationSidebar,
+	HomeSidebar,
+	StudyMaterialsSidebar
+} from './components'
 import styles from './right-sidebar.module.scss'
 
 const RightSidebar: FC = () => {
@@ -18,11 +22,11 @@ const RightSidebar: FC = () => {
 			case '/documentation':
 				return <DocumentationSidebar />
 			case '/':
-				return <p>Домашняя панель</p>
+				return <HomeSidebar />
 			case '/study-materials':
 				return <StudyMaterialsSidebar />
 			default:
-				return <p>Боковая панель по умолчанию</p>
+				return <HomeSidebar />
 		}
 	}
 

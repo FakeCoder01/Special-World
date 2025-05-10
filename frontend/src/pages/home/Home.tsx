@@ -1,6 +1,6 @@
-import { Layout } from '@/widgets'
+import { Layout } from '@/shared'
 
 const Home = () => {
-	return <Layout>Home</Layout>
+	return <Layout></Layout>
 }
 export default Home

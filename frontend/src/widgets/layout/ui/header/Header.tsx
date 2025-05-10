@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { BsWindowSidebar } from 'react-icons/bs'
 import { FiMoon, FiSun } from 'react-icons/fi'
 import { LuUser } from 'react-icons/lu'
@@ -12,8 +12,13 @@ import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/redux'
 import { toggleLeftSidebar, toggleRightSidebar } from '../../model/sidebarSlice'
 
 import styles from './header.module.scss'
+import { Typography } from '@/shared'
 
-const Header: FC = () => {
+interface IHeader {
+	headerContent?: ReactNode
+}
+
+const Header: FC<IHeader> = ({ headerContent }) => {
 	const dispatch = useAppDispatch()
 	const currentTheme = useAppSelector(state => state.theme.currentTheme)
 
@@ -28,7 +33,13 @@ const Header: FC = () => {
 					<LogoSVG />
 				</Link>
 			</aside>
-			<div className={styles.body}></div>
+			<div className={styles.body}>
+				{headerContent ?? (
+					<Typography variant='title-small'>
+						Анастасия, добро пожаловать в Особый Мир!
+					</Typography>
+				)}
+			</div>
 			<aside className={styles.rightSidebar}>
 				<button
 					className={styles.themeToggle}
@@ -48,7 +59,7 @@ const Header: FC = () => {
 				/>
 				<Link to='/login' className={styles.login}>
 					<LuUser className={styles.icon} />
-					<p>Войти</p>
+					<Typography variant='text'>Войти</Typography>
 				</Link>
 			</aside>
 		</header>

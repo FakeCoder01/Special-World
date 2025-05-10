@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 
 import { useAppSelector } from '@/shared/lib/hooks/redux'
 
@@ -8,11 +8,7 @@ interface LogoSVGProps {
 	height?: number | string
 }
 
-const LogoSVG: React.FC<LogoSVGProps> = ({
-	className,
-	width = 120,
-	height = 'auto'
-}) => {
+const LogoSVG: FC<LogoSVGProps> = ({ className, width = 120, height }) => {
 	const currentTheme = useAppSelector(state => state.theme.currentTheme)
 	const fillColor = currentTheme === 'dark' ? '#ffffff' : '#000000'
 

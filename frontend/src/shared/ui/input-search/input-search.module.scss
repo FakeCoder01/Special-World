@@ -1,0 +1,24 @@
+.inputSearch {
+	position: relative;
+
+	input {
+		color: var(--color-text);
+		max-width: 300px;
+		width: 100%;
+		padding: 10px 15px 10px 48px;
+		border-radius: 16px;
+		background-color: var(--bg-primary);
+
+		&:focus {
+			outline: 1px solid var(--accent);
+		}
+	}
+}
+
+.icon {
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px;
+}

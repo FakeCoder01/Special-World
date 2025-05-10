@@ -1,0 +1,53 @@
+:root {
+	.rbc-calendar {
+		font-size: 14px;
+	}
+
+	.rbc-month-view {
+		overflow: hidden;
+		border-radius: 16px;
+	}
+
+	.rbc-day-bg {
+		&:hover {
+			background-color: var(--bg-secondary);
+		}
+	}
+
+	.rbc-off-range-bg {
+		background-color: var(--border);
+	}
+
+	.rbc-today {
+		background-color: var(--accent-soft);
+
+		&:hover {
+			background-color: var(--accent-soft);
+		}
+	}
+
+	.rbc-toolbar .rbc-toolbar-label {
+		padding: 0;
+	}
+
+	.rbc-btn-group {
+		display: flex;
+
+		button {
+			border: none;
+			padding: 5px;
+			border-radius: 4px;
+			color: var(--color-text);
+		}
+	}
+
+	.rbc-toolbar {
+		font-size: 15px;
+		flex-wrap: nowrap;
+		flex-direction: row-reverse;
+
+		.rbc-toolbar-label {
+			text-align: start;
+		}
+	}
+}
