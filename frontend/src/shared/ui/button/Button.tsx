@@ -1,6 +1,6 @@
 import { ComponentProps, FC, PropsWithChildren } from 'react'
 
-import styles from './button.module.scss'
+import styles from './Button.module.scss'
 
 const Button: FC<PropsWithChildren<ComponentProps<'button'>>> = ({
 	children,

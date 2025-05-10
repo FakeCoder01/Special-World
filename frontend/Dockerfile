@@ -5,15 +5,15 @@ WORKDIR /app
 COPY package.json ./
 COPY package-lock.json ./
 
-# COPY yarn.lock ./
+COPY yarn.lock ./
 
-RUN npm ci
+# RUN npm ci
 
-# RUN yarn install --frozen-lockfile
+RUN yarn install
 
 COPY . .
 # RUN yarn build
 
-EXPOSE 3000
+EXPOSE 5173
 
-CMD ["npm", "start"]
+CMD ["yarn", "run", "dev", "--host"]
