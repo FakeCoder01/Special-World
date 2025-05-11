@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-+p^8robw9c3edif1rsbgj!)*p&y&dibblf&^ma0ow)b@1aavcy
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+FORCE_SCRIPT_NAME = '/api/'
 # Application definition
 
 INSTALLED_APPS = [
